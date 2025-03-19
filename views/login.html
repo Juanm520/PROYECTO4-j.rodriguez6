@@ -23,11 +23,13 @@
         </form>
         {% else:%}
         <form action="logout" method="POST" class="login-container">
-        <h3>{{ current_user.username }} esta autenticado.</h3> 
-        <h4>Tienes acceso a los endpoints.</h4> 
-        <a href="/endpoints"><button> Ver lista de endpoints </button></a>
+            <h3>{{ current_user.username }} esta autenticado.</h3> 
+            <h4>Tienes acceso a los endpoints.</h4> 
             <button type="submit"> Logout </button>
         </form>
+        <a href="/endpoints" target="_blank">
+            <button>Ver lista de Endpoints</button>
+        </a>
         {% endif %}
 </body>
 </html>
