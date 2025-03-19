@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+    <title>Login</title>
+</head>
+<body>
+    {% if not current_user.is_authenticated %}
+    <form action="auth" method="POST" class="login-container">
+            <h3>Ingreso a Sami el Heladero:</h3>
+            <input type="text" name="user" placeholder="Ingrese usuario">
+            <input type="password" name="password" placeholder="Ingrese contraseña">
+            {% with mensajes = get_flashed_messages(with_categories=true) %}
+            {% if mensajes %}
+            {% for category, mensaje in mensajes %}
+            <p>{{ mensaje }}</p>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+            <button type="submit"> Enviar </button>
+        </form>
+        {% else:%}
+        <form action="logout" method="POST" class="login-container">
+        <h3>{{ current_user.username }} esta autenticado.</h3> 
+        <h4>Tienes acceso a los endpoints.</h4> 
+            <button type="submit"> Logout </button>
+        </form>
+        {% endif %}
+</body>
+</html>

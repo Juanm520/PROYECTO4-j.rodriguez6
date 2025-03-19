@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* static/index.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    font-family: Nunito;
+    color: #ffcc00;
+}
+
+h2 {
+    font-family: Nunito;
+    color: #ffcc00;
+}
+
+h4 {
+    color: #ffcc00;
+}
+
+.cuerpo {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    gap: 5vh;
+}
+
+.Lista {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; 
+}
+
+ul {
+    width: 40vh;
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-family: "Josefin Sans", serif;
+    background-color: #333;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+button {
+    font-family: "Josefin Sans", serif; ;
+    border: none; 
+    color: white; 
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+  }
+  .primary {background-color: #e7e7e7; color: black;} 
+  .primary:hover {background: #129fd6;}
