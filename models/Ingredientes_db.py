@@ -5,9 +5,9 @@ class Ingrediente(db.Model):
     '''Modelo de Ingrediente en la base de datos.'''
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     nombre = db.Column(db.String(150), unique = True, nullable=False)
-    precio = db.Column(db.DECIMAL(10, 2), nullable=False)
+    precio = db.Column(db.Float, nullable=False)
     calorias = db.Column(db.Integer, nullable=False)
-    unidades = db.Column(db.DECIMAL(10, 2), nullable=False)
+    unidades = db.Column(db.Float, nullable=False)
     es_vegetariano = db.Column(db.Boolean, nullable=False)
     tipo_de_ingrediente = db.Column(db.String(100), nullable=False)
     sabor = db.Column(db.String(100), nullable=True)

@@ -5,7 +5,7 @@ class Producto(db.Model):
     '''Modelo de Producto en la base de datos.'''
     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     nombre = db.Column(db.String(150), nullable=False)
-    precio_publico = db.Column(db.DECIMAL(10, 2), nullable=False)
+    precio_publico = db.Column(db.Float, nullable=False)
     ingrediente1 = db.Column(db.String(100), db.ForeignKey('ingrediente.nombre'), nullable=False)
     ingrediente2 = db.Column(db.String(100), db.ForeignKey('ingrediente.nombre'), nullable=False)
     ingrediente3 = db.Column(db.String(100), db.ForeignKey('ingrediente.nombre'), nullable=False)
