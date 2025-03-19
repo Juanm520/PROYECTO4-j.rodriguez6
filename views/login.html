@@ -8,7 +8,8 @@
 </head>
 <body>
     {% if not current_user.is_authenticated %}
-    <form action="auth" method="POST" class="login-container">
+    <section class="login-container">
+    <form action="auth" method="POST">
             <h3>Ingreso a Sami el Heladero:</h3>
             <input type="text" name="user" placeholder="Ingrese usuario">
             <input type="password" name="password" placeholder="Ingrese contraseña">
@@ -21,6 +22,10 @@
             {% endwith %}
             <button type="submit"> Enviar </button>
         </form>
+        <a href="/endpoints" target="_blank">
+            <button>Ver usuarios disponibles y lista de Endpoints</button>
+        </a>
+    </section>
         {% else:%}
         <section class="login-container">
             <form action="logout" method="POST" >
