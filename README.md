@@ -55,5 +55,5 @@ Debe tener autorización para ingresar a algunos endpoints.
 **POST** `/ingrediente_renovar?id={id}` `Admin - Empleado`
 
 ### 🔀 CAMBIOS:
-**Adaptado a Mysql** `Proyecto 3 estaba adaptado para una BD postgreSQL.`
-**Despliegue** `Adaptado para el despliegue en un hosting administrado con CPanel.`
+### **Adaptado a Mysql** `Proyecto 3 estaba adaptado para una BD postgreSQL.`
+### **Despliegue** `Adaptado para el despliegue en un hosting administrado con CPanel.`
