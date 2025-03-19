@@ -8,7 +8,6 @@ from models.Usuario_db import Usuario
 from crear_filas_iniciales import crear_filas
 
 app = Flask(__name__, template_folder='views')
-application = app
 app.config.from_object(Config)
 login_manager = LoginManager(app)
 db.init_app(app)
@@ -27,6 +26,8 @@ def no_autenticado():
 with app.app_context():
     db.create_all()
     crear_filas(db)
+
+application = app
 
 if __name__ == '__main__':
     app.run(debug=True)
