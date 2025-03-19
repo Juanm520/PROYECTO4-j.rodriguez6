@@ -32,7 +32,7 @@ Debe tener autorización para ingresar a algunos endpoints.
 **GET** `/producto_costo?id={id}` `Admin`
 
 ### 🔹 Vender un producto
-**POST** `/vender_producto?id={id}` `Admin - Empleado - cliente`
+**GET** `/vender_producto?id={id}` `Admin - Empleado - cliente`
 
 ## 🍓 Ingredientes
 
@@ -49,10 +49,10 @@ Debe tener autorización para ingresar a algunos endpoints.
 **GET** `/ingrediente_es_sano?id={id}` `Admin - Empleado`
 
 ### 🔹 Reabastecer un ingrediente
-**POST** `/ingrediente_reabastecer?id={id}` `Admin - Empleado`
+**GET** `/ingrediente_reabastecer?id={id}` `Admin - Empleado`
 
 ### 🔹 Renovar un ingrediente
-**POST** `/ingrediente_renovar?id={id}` `Admin - Empleado`
+**GET** `/ingrediente_renovar?id={id}` `Admin - Empleado`
 
 ### 🔀 CAMBIOS:
 ### **Adaptado a Mysql** `Proyecto 3 estaba adaptado para una BD postgreSQL.`
