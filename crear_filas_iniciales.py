@@ -101,20 +101,14 @@ def crear_filas(db):
     
     if db.session.query(Usuario).count() == 0:
     #usuarios
-        usuarios_a_agregar = []
-        usuarios_a_agregar.append(Usuario(username = 'admin',
-                                          password = 'admin1',
-                                          es_admin = True,
-                                          es_empleado = False))
-        usuarios_a_agregar.append(Usuario(username = 'empleado',
-                                          password = 'empleado1',
-                                          es_admin = False,
-                                          es_empleado = True))
-        usuarios_a_agregar.append(Usuario(username = 'cliente',
-                                          password = 'cliente1',
-                                          es_admin = False,
-                                          es_empleado = False))
+        admin = Usuario(username = 'admin', es_admin = True, es_empleado = False)
+        admin.set_password('admin1')
+        empleado = Usuario(username = 'empleado', es_admin = False, es_empleado = True)
+        empleado.set_password('empleado1')
+        cliente = Usuario(username = 'cliente', es_admin = False, es_empleado = False)
+        cliente.set_password('cliente1')
 
+        usuarios_a_agregar = [admin, empleado, cliente]
         db.session.add_all(usuarios_a_agregar)
         db.session.commit()
     else:

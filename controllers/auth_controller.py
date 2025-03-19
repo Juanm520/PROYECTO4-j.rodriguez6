@@ -10,7 +10,7 @@ def auth_controller():
     contrasena = request.form.get('password')
     user = Usuario.query.filter_by(username=usuario).first()
 
-    if user and user.password == contrasena:
+    if user and user.check_password(contrasena):
         login_user(user)
         return redirect(url_for('login.login_controller'))
     else:

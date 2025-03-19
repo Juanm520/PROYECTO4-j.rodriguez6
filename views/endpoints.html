@@ -8,14 +8,21 @@
 
 </head>
 <body>
-    <h1> API Sammy el Heladero</h1>
+    <h1> 🐧 API Sammy el Heladero</h1>
     <p>Esta API permite gestionar productos e ingredientes, incluyendo su consulta, actualización y venta.</p>
     
-    <h2> Autorización</h2>
+    <h2> 🔐 Autorización</h2>
     <p>Debe tener autorización para ingresar a algunos endpoints.</p>
 
-    <h2> API Endpoints</h2>
-    <h3> Productos</h3>
+    <p>  👤Usuarios disponibles para pruebas:</p>
+    <ul>
+        <li><code>admin:admin1</code></li>
+        <li><code>empleado:empleado1</code></li>
+        <li><code>cliente:cliente1</code></li>
+    </ul>
+
+    <h2> 🎯API Endpoints</h2>
+    <h3> 🥤🍨Productos</h3>
     
     <div class="endpoint"><strong> Obtener todos los productos</strong><br>
     <code>GET /productos</code> (No requiere autorización)
@@ -45,7 +52,7 @@
     <code>GET /vender_producto?id={id}</code> (Admin - Empleado - Cliente)
     </div>
 
-    <h3> Ingredientes</h3>
+    <h3> 🍓🍦Ingredientes</h3>
     <div class="endpoint"><strong> Obtener todos los ingredientes</strong><br>
     <code>GET /ingredientes</code> (Admin - Empleado)
     </div>

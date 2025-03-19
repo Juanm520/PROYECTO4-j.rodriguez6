@@ -1,5 +1,6 @@
 import uuid
 from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 from config.db import db
 
 class Usuario(db.Model, UserMixin):
@@ -9,3 +10,10 @@ class Usuario(db.Model, UserMixin):
     password = db.Column(db.String(256), nullable = False)
     es_admin = db.Column(db.Boolean, nullable = True)
     es_empleado = db.Column(db.Boolean, nullable = True)
+
+    def set_password(self, password):
+            self.password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+    
