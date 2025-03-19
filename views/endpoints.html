@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='endpoints.css') }}">
+    <title>API Sammy el Heladero</title>
+
+</head>
+<body>
+    <h1>🐧 API Sammy el Heladero</h1>
+    <p>Esta API permite gestionar productos e ingredientes, incluyendo su consulta, actualización y venta.</p>
+    
+    <h2>🔐 Autorización</h2>
+    <p>Debe tener autorización para ingresar a algunos endpoints.</p>
+    <p>Usuarios disponibles para pruebas:</p>
+    <ul>
+        <li><code>admin:admin1</code></li>
+        <li><code>empleado:empleado1</code></li>
+        <li><code>cliente:cliente1</code></li>
+    </ul>
+
+    <h2>📌 API Endpoints</h2>
+    <h3>🍨🥤 Productos</h3>
+    
+    <div class="endpoint"><strong>🔹 Obtener todos los productos</strong><br>
+    <code>GET /productos</code> (No requiere autorización)
+    </div>
+    
+    <div class="endpoint"><strong>🔹 Obtener un producto por ID</strong><br>
+    <code>GET /producto_id?id={id}</code> (Admin - Empleado)
+    </div>
+
+    <div class="endpoint"><strong>🔹 Obtener un producto por nombre</strong><br>
+    <code>GET /producto_nombre?nombre={nombre}</code> (Admin - Empleado)
+    </div>
+
+    <div class="endpoint"><strong>🔹 Obtener las calorías de un producto</strong><br>
+    <code>GET /producto_calorias?id={id}</code> (Admin - Empleado - Cliente)
+    </div>
+
+    <div class="endpoint"><strong>🔹 Obtener la rentabilidad de un producto</strong><br>
+    <code>GET /producto_rentabilidad?id={id}</code> (Admin)
+    </div>
+    
+    <div class="endpoint"><strong>🔹 Obtener el costo de un producto</strong><br>
+    <code>GET /producto_costo?id={id}</code> (Admin)
+    </div>
+
+    <div class="endpoint"><strong>🔹 Vender un producto</strong><br>
+    <code>POST /vender_producto?id={id}</code> (Admin - Empleado - Cliente)
+    </div>
+
+    <h3>🍓 Ingredientes</h3>
+    <div class="endpoint"><strong>🔹 Obtener todos los ingredientes</strong><br>
+    <code>GET /ingredientes</code> (Admin - Empleado)
+    </div>
+
+    <div class="endpoint"><strong>🔹 Obtener un ingrediente por ID</strong><br>
+    <code>GET /ingrediente_id?id={id}</code> (Admin - Empleado)
+    </div>
+    
+    <div class="endpoint"><strong>🔹 Obtener un ingrediente por nombre</strong><br>
+    <code>GET /ingrediente_nombre?nombre={nombre}</code> (Admin - Empleado)
+    </div>
+    
+    <div class="endpoint"><strong>🔹 Verificar si un ingrediente es sano</strong><br>
+    <code>GET /ingrediente_es_sano?id={id}</code> (Admin - Empleado)
+    </div>
+    
+    <div class="endpoint"><strong>🔹 Reabastecer un ingrediente</strong><br>
+    <code>POST /ingrediente_reabastecer?id={id}</code> (Admin - Empleado)
+    </div>
+    
+    <div class="endpoint"><strong>🔹 Renovar un ingrediente</strong><br>
+    <code>POST /ingrediente_renovar?id={id}</code> (Admin - Empleado)
+    </div>
+
+    <h2>🔀 Cambios</h2>
+    <ul>
+        <li><strong>Adaptado a MySQL:</strong> Proyecto 3 estaba adaptado para una BD PostgreSQL.</li>
+        <li><strong>Despliegue:</strong> Adaptado para el despliegue en un hosting administrado con CPanel.</li>
+    </ul>
+</body>
+</html>

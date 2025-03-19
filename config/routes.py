@@ -1,12 +1,14 @@
 from controllers.inicio_controller import inicio_blueprint
 from controllers.login_controller import login_blueprint
 from controllers.auth_controller import auth_blueprint, logout_blueprint
+from controllers.endpoints_controller import endpoints_blueprint
 import controllers.api_controller as api
 
 def register_routes(app):
     app.register_blueprint(inicio_blueprint)
     app.register_blueprint(login_blueprint)
     app.register_blueprint(auth_blueprint)
+    app.register_blueprint(endpoints_blueprint)
     app.register_blueprint(logout_blueprint)
     app.register_blueprint(api.productos_blueprint)
     app.register_blueprint(api.producto_id_blueprint)
