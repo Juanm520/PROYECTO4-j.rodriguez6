@@ -184,7 +184,7 @@ def ingrediente_es_sano_controller():
         ingredientes_instancia = heladeria_controller().ingredientes
         ingrediente = list(filter(lambda ingrediente: ingrediente.nombre == ingrediente_db.nombre, ingredientes_instancia))
         #Crea el retorno del endpoint.
-        ingrediente_es_sano = {'id': ingrediente_id, 'nombre':ingrediente[0].nombre, 'es_sano': ingrediente[0].es_sano()}
+        ingrediente_es_sano = {'id': ingrediente_id, 'nombre':ingrediente[0].nombre, 'es_sano': ingrediente[0].es_sano(), 'es_vegetariano':ingrediente[0].es_vegetariano}
         return jsonify(ingrediente_es_sano)
     else:
         return jsonify({'error': 'No autorizado'}), 401
