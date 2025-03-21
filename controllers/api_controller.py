@@ -106,7 +106,7 @@ def producto_costo_controller():
         productos_instancia = heladeria_controller().productos
         producto = list(filter(lambda producto: producto.nombre == producto_db.nombre, productos_instancia))
         #Crea el retorno del endpoint.
-        producto_costo = {'id': producto_id, 'nombre':producto[0].nombre, 'rentabilidad': producto[0].calcular_costo()}
+        producto_costo = {'id': producto_id, 'nombre':producto[0].nombre, 'costo': producto[0].calcular_costo()}
         return jsonify(producto_costo)
     else:
         return jsonify({'error': 'No autorizado'}), 401
